@@ -13,13 +13,6 @@ A flutter plugin for integrating [Map4D Services](https://api.map4d.vn/sdk/docs/
 
 To use this plugin, add `map4d_services` as a dependency in your `pubspec.yaml` file.
 
-```yaml
-dependencies:
-  map4d_services: ^1.2.2
-```
-
-Or run command
-
 ```shell
 flutter pub add map4d_services
 ```

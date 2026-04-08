@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'map4d_services'
-  s.version          = '1.2.2'
+  s.version          = '1.3.0'
   s.summary          = 'Map4dServices for flutter.'
   s.description      = 'A flutter plugin for integrating Map4D Services in iOS and Android applications.'
   s.homepage         = 'https://map4d.vn'

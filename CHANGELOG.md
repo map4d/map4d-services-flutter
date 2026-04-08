@@ -1,3 +1,7 @@
+## 1.3.0
+
+* [Android] Support 16 KB page size
+
 ## 1.2.2
 
 * [Android] Support AGP v8
