@@ -8,7 +8,6 @@
 
 ## 1.2.0
 
-* Methods `fetchRouteETA` and `fetchGraphRoute` are no longer supported
 * [iOS] Remove bitcode
 
 ## 1.1.1

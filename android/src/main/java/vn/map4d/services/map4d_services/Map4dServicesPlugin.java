@@ -57,16 +57,8 @@ public class Map4dServicesPlugin implements FlutterPlugin, MethodCallHandler {
         SClient.fireRequest(servicesOptions, SRequest.buildDirectionsRequestWithData(call), result);
         break;
       }
-      case "route#eta": {
-        SClient.fireRequest(servicesOptions, SRequest.buildRouteETARequestWithData(call), result);
-        break;
-      }
       case "route#matrix": {
         SClient.fireRequest(servicesOptions, SRequest.buildDistanceMatrixRequestWithData(call), result);
-        break;
-      }
-      case "route#graph": {
-        SClient.fireRequest(servicesOptions, SRequest.buildGraphRouteRequestWithData(call), result);
         break;
       }
       default:

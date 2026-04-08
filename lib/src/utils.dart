@@ -68,39 +68,3 @@ List<MFGeocodeResult> toListGeocode(Object? result) {
 
   return codes;
 }
-
-///
-///
-List<MFRouteETAResult> toListRouteETA(Object? result) {
-  if (result == null || result is! List<dynamic>) {
-    return [];
-  }
-
-  final routes = <MFRouteETAResult>[];
-  for (final e in result) {
-    final route = RouteETAResult.fromMap(e);
-    if (route != null) {
-      routes.add(route);
-    }
-  }
-
-  return routes;
-}
-
-///
-///
-List<MFGraphRouteResult> toListGraphRoute(Object? result) {
-  if (result == null || result is! List<dynamic>) {
-    return [];
-  }
-
-  final routes = <MFGraphRouteResult>[];
-  for (final e in result) {
-    final route = GraphRouteResult.fromMap(e);
-    if (route != null) {
-      routes.add(route);
-    }
-  }
-
-  return routes;
-}

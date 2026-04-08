@@ -226,56 +226,6 @@ class SRequest {
     return serviceOptionsBuilder.build();
   }
 
-  static MFServiceOptions buildRouteETARequestWithData(@NonNull MethodCall call) {
-    MFServiceOptions.Builder serviceOptionsBuilder = new MFServiceOptions.Builder();
-    serviceOptionsBuilder.url("/sdk/route/eta");
-    serviceOptionsBuilder.method(MFMethod.POST);
-
-    JSONObject jsonObject = new JSONObject();
-    try {
-      JSONArray origins = SConverter.toOriginJsonArray(call.argument("origins"));
-      if (origins != null) {
-        jsonObject.put("origins", origins);
-      }
-
-      String destination = SConverter.toLocation(call.argument("destination"));
-      if (destination != null) {
-        jsonObject.put("destination", destination);
-      }
-
-      String mode = SConverter.toMode(call.argument("mode"));
-      if (mode != null) {
-        jsonObject.put("mode", mode);
-      }
-
-      String weighting = SConverter.toWeighting(call.argument("weighting"));
-      if (weighting != null) {
-        jsonObject.put("weighting", weighting);
-      }
-
-      String language = SConverter.toLanguage(call.argument("language"));
-      if (language != null) {
-        jsonObject.put("language", language);
-      }
-
-      Object avoidObject = call.argument("restriction");
-      String avoid = SConverter.toAvoid(avoidObject);
-      if (avoid != null) {
-        jsonObject.put("avoid", avoid);
-      }
-
-      String avoidRoads = SConverter.toAvoidRoads(avoidObject);
-      if (avoidRoads != null) {
-        jsonObject.put("avoidRoads", avoidRoads);
-      }
-    } catch (JSONException e) {
-      e.printStackTrace();
-    }
-
-    serviceOptionsBuilder.json(jsonObject.toString());
-    return serviceOptionsBuilder.build();
-  }
-
   static MFServiceOptions buildDistanceMatrixRequestWithData(@NonNull MethodCall call) {
     MFServiceOptions.Builder serviceOptionsBuilder = new MFServiceOptions.Builder();
     serviceOptionsBuilder.url("/sdk/route/matrix");
@@ -323,45 +273,4 @@ class SRequest {
     return serviceOptionsBuilder.build();
   }
 
-  static MFServiceOptions buildGraphRouteRequestWithData(@NonNull MethodCall call) {
-    MFServiceOptions.Builder serviceOptionsBuilder = new MFServiceOptions.Builder();
-    serviceOptionsBuilder.url("/sdk/route/graph");
-    serviceOptionsBuilder.method(MFMethod.GET);
-
-    MFRequestParams params = new MFRequestParams();
-
-    String points = SConverter.toLocationList(call.argument("points"));
-    if (points != null) {
-      params.put("points", points);
-    }
-
-    String mode = SConverter.toMode(call.argument("mode"));
-    if (mode != null) {
-      params.put("mode", mode);
-    }
-
-    String weighting = SConverter.toWeighting(call.argument("weighting"));
-    if (weighting != null) {
-      params.put("weighting", weighting);
-    }
-
-    String language = SConverter.toLanguage(call.argument("language"));
-    if (language != null) {
-      params.put("language", language);
-    }
-
-    Object avoidObject = call.argument("restriction");
-    String avoid = SConverter.toAvoid(avoidObject);
-    if (avoid != null) {
-      params.put("avoid", avoid);
-    }
-
-    String avoidRoads = SConverter.toAvoidRoads(avoidObject);
-    if (avoidRoads != null) {
-      params.put("avoidRoads", avoidRoads);
-    }
-
-    serviceOptionsBuilder.params(params);
-    return serviceOptionsBuilder.build();
-  }
 }

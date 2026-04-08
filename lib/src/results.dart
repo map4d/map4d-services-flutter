@@ -15,8 +15,6 @@ export 'results/route_description.dart';
 export 'results/route_step.dart';
 export 'results/route_leg.dart';
 export 'results/route.dart';
-export 'results/route_eta.dart';
-export 'results/graph_route.dart';
 export 'results/distance_matrix_element.dart';
 export 'results/distance_matrix_row.dart';
 export 'results/distance_matrix.dart';
