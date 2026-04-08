@@ -15,7 +15,6 @@ buildscript {
 rootProject.allprojects {
     repositories {
         google()
-        mavenCentral()
         maven {
             url = "https://packages.map4d.vn/repository/maven-public"
         }
@@ -27,11 +26,6 @@ apply plugin: 'com.android.library'
 android {
     namespace "vn.map4d.services.map4d_services"
     compileSdkVersion 33
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
     defaultConfig {
         minSdkVersion 21
     }
