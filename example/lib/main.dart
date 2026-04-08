@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:map4d_services/map4d_services.dart';
 
@@ -16,7 +18,10 @@ class _MyAppState extends State<MyApp> {
   void _placeDetail() async {
     MFServices.places
         .fetchPlaceDetail('5c88df71d2c05acd14848f9e')
-        .then((detail) => {print('Place Detail: $detail')})
+        .then((detail) => {
+              print('Place Detail: $detail'),
+              inspect(detail),
+            })
         .onError<MFServiceError>((error, stackTrace) =>
             {print('Place Detail Error: ${error.code}, ${error.message}')});
   }
@@ -30,6 +35,7 @@ class _MyAppState extends State<MyApp> {
         acronym: false,
       );
       print('Auto Suggest: $places');
+      inspect(places);
     } on MFServiceError catch (error) {
       print('Auto Suggest Error: ${error.code}, ${error.message}');
     }
@@ -43,6 +49,7 @@ class _MyAppState extends State<MyApp> {
             latitude: 16.075177, longitude: 108.220228));
     //textSearch['result'][0]['name'];
     print('Text Search: $places');
+    inspect(places);
   }
 
   void _nearbySearch() async {
@@ -56,6 +63,7 @@ class _MyAppState extends State<MyApp> {
         datetime: DateTime.now(),
       );
       print('Nearby Search: $places');
+      inspect(places);
     } on MFServiceError catch (error) {
       print('Nearby Search Error: ${error.code}, ${error.message}');
     }
@@ -75,6 +83,7 @@ class _MyAppState extends State<MyApp> {
         datetime: DateTime.now(),
       );
       print('Viewbox Search: $places');
+      inspect(places);
     } on MFServiceError catch (error) {
       print('Viewbox Search Error: ${error.code}, ${error.message}');
     }
@@ -92,6 +101,7 @@ class _MyAppState extends State<MyApp> {
               northeast: MFLocationComponent(
                   latitude: 16.093031550262133, longitude: 108.25927734375)));
       print('Geocode: $geos');
+      inspect(geos);
     } on MFServiceError catch (error) {
       print('Geocode Error: ${error.code}, ${error.message}');
     }
@@ -119,6 +129,7 @@ class _MyAppState extends State<MyApp> {
           waypoints: waypoints,
           restriction: restriction);
       print('Directions: $directions');
+      inspect(directions);
     } on MFServiceError catch (error) {
       print('Directions Error: ${error.code}, ${error.message}');
     }
@@ -146,9 +157,9 @@ class _MyAppState extends State<MyApp> {
 
     MFServices.routes
         .fetchDistanceMatrix(origins, destinations, restriction: restriction)
-        .then((matrix) => print('Matrix: $matrix'))
+        .then((matrix) => {print('Matrix: $matrix'), inspect(matrix)})
         .onError<MFServiceError>((error, stackTrace) =>
-            print('Matrix Error: ${error.code}, ${error.message}'));
+            {print('Matrix Error: ${error.code}, ${error.message}')});
   }
 
   @override
