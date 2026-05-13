@@ -1,7 +1,6 @@
 # Map4dServices for Flutter
-[![map4d](https://img.shields.io/badge/map4d-services-orange)](https://map4d.vn/)
 [![platform](https://img.shields.io/badge/platform-flutter-45d2fd.svg)](https://flutter.dev/)
-[![pub package](https://img.shields.io/pub/v/map4d_services.svg)](https://pub.dev/packages/map4d_services)
+[![pub package](https://img.shields.io/pub/v/map4d_services_dtqg.svg)](https://pub.dev/packages/map4d_services_dtqg)
 
 A flutter plugin for integrating [Map4D Services](https://api.map4d.vn/sdk/docs/index.html) in iOS and Android applications.
 
@@ -11,10 +10,10 @@ A flutter plugin for integrating [Map4D Services](https://api.map4d.vn/sdk/docs/
 
 ## Installing
 
-To use this plugin, add `map4d_services` as a dependency in your `pubspec.yaml` file.
+To use this plugin, add `map4d_services_dtqg` as a dependency in your `pubspec.yaml` file.
 
 ```shell
-flutter pub add map4d_services
+flutter pub add map4d_services_dtqg
 ```
 
 ## Setup Services API key
@@ -50,7 +49,7 @@ Provide services api key from `ios/Runner/Info.plist`
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:map4d_services/map4d_services.dart';
+import 'package:map4d_services_dtqg/map4d_services.dart';
 
 void getPlaceDetail() async {
   MFServices.places
@@ -61,9 +60,6 @@ void getPlaceDetail() async {
 }
 ```
 
-See [example](https://github.com/map4d/map4d-services-flutter/tree/master/example) directory for more examples
-
 ## Documents
 
-- Guides: <https://docs.map4d.vn/map4d-service/flutter/>
 - API Reference: <https://pub.dev/documentation/map4d_services/latest/>

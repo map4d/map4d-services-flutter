@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:map4d_services/map4d_services.dart';
+import 'package:map4d_services_dtqg/map4d_services.dart';
 
 void main() {
   runApp(const MyApp());
